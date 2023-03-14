@@ -1,0 +1,7 @@
+{
+  "name": "chateau magnifique",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
