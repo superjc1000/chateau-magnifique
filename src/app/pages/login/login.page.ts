@@ -18,8 +18,4 @@ export class LoginPage implements OnInit {
     this.chatservice.signIn();
   }
 
-  signOut(): void {
-    this.chatservice.signOut();
-  }
-
 }
