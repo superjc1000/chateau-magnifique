@@ -5,7 +5,7 @@ import { ChatPage } from './chat.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '/chat',
     component: ChatPage
   }
 ];
