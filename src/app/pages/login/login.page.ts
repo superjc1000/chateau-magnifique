@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ChatService } from 'src/app/services/chat.service';
 
 @Component({
@@ -8,14 +9,15 @@ import { ChatService } from 'src/app/services/chat.service';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private chatservice: ChatService) { }
+  constructor(private chatservice: ChatService, private route: Router) { }
 
   ngOnInit() {
 
   }
 
   signIn(): void {
-    this.chatservice.signIn();
+    this.chatservice.signIn().then(()=>
+    this.route.navigate(['']));
   }
 
 }

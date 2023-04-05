@@ -31,7 +31,7 @@ currentUser: User = {
 
    signIn(){
     let provider = new GoogleAuthProvider();
-    this.afAuth
+    return this.afAuth
     .signInWithPopup(provider)
     .then((result) => {
 
@@ -47,7 +47,7 @@ currentUser: User = {
     window.alert(error)
     // ...
   });
-   }
+  }
 
    signOut(){
     return this.afAuth.signOut();
