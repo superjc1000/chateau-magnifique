@@ -7,10 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { DatabaseModule } from '@angular/fire/database'
 
 import { ChatPageRoutingModule } from './chat-routing.module';
+import { ReactiveFormsModule} from '@angular/forms';
 
 import { ChatPage } from './chat.page';
-
-import { FormGroup, FormControl } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -19,8 +18,7 @@ import { FormGroup, FormControl } from '@angular/forms';
     IonicModule,
     ChatPageRoutingModule,
     DatabaseModule,
-    FormControl,
-    FormGroup
+    ReactiveFormsModule
   ],
   declarations: [ChatPage]
 })
