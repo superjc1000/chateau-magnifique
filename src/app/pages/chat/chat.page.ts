@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Mensaje } from 'src/app/services/mensajes.service';
 import { getAuth } from 'firebase/auth';
+import { InfiniteScrollCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-chat',
@@ -37,7 +38,12 @@ initForm(){
     this.route.navigate(['/login']));
   }
   sendMessage(): void {
-    console.log(this.auxauth.displayName)
    this.mensajeservice.addMessage(this.auxauth.displayName, Date.now(), this.form.controls['messageBody'].value);
+  }
+
+  onIonInfinite(ev) {
+    setTimeout(() => {
+      (ev as InfiniteScrollCustomEvent).target.complete();
+    }, 500);
   }
 }

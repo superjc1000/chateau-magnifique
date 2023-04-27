@@ -40,8 +40,6 @@ export class MensajesService {
 
     });
 
-    console.log("ta ueno");
-
   }
 
   getMensajes(): Observable<Mensaje[]> {

@@ -1,15 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>chateau magnifique</ion-title>
-    <ion-button
-      color="danger"
-      class="botoeixida"
-      size="small"
-      shape="round"
-      (click)=" this.signOut();"
-    >
-      Haz click para clickear
-    </ion-button>
+    <div class="botoeixida">
+      <ion-button
+        color="danger"
+        size="small"
+        shape="round"
+        (click)=" this.signOut();"
+      >
+        Haz click para clickear
+      </ion-button>
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -17,6 +18,9 @@
   <div *ngFor="let mesage of messages">
     <b>{{mesage.usuario}}:</b>{{mesage.text}}
   </div>
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
   <form [formGroup]="form" (ngSubmit)="sendMessage()">
     <input id="name" type="text" formControlName="messageBody" />
