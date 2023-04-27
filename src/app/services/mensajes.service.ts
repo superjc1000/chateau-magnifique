@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
-import { Observable, map } from 'rxjs';
+import { Observable, map, mergeScan } from 'rxjs';
 
 export interface Mensaje{
 
-  user: string;
+  usuario: string;
   fecha: Date; //cambiar a string
   text: string;
 }
@@ -28,23 +28,22 @@ export class MensajesService {
 
  
 
-    this.mensajesDB.push({
-
-      user: 'sam',
-
-      fecha: new Date(),
-
-      text: 'Mensaje de prueba',
-
-    });
-
-    
 
   }
 
   addMessage(msg: Mensaje){
 
-    this.mensajesDB.push(msg);
+    this.mensajesDB.push({
+
+      usuario: msg.usuario,
+
+      fecha: msg.fecha,
+
+      text: msg.text,
+
+    });
+
+    console.log("ta ueno");
 
   }
   getMensajes(): Observable<Mensaje[]> {

@@ -16,13 +16,13 @@
   </ion-button>
 
   <div *ngFor="let mesage of messages">
-    <b>{{mesage.user}}:</b>{{mesage.text}}
+    <b>{{mesage.usuario}}:</b>{{mesage.text}}
   </div>
 
   <form [formGroup]="form" (ngSubmit)="sendMessage()">
     <input id="name" type="text" formControlName="messageBody" />
     <ion-button [disabled]="!form.controls['messageBody'].valid" type="submit"
-      >Send</ion-button
+      >Envía el envío</ion-button
     >
   </form>
 </ion-content>
