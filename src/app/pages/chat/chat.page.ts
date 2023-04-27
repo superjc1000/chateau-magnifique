@@ -15,7 +15,6 @@ export class ChatPage implements OnInit {
   
   form: FormGroup;
   messages: Mensaje[];
-  User: string;
   auth = getAuth();
   auxauth = this.auth.currentUser;
   
@@ -23,7 +22,6 @@ constructor(private chatservice: ChatService, private route: Router, private fb:
 { console.log(this.mensajeservice);  this.mensajeservice.getMensajes().subscribe(m => this.messages = m);}
 
     
-  Today = Date.now();
 
   
   ngOnInit() {
@@ -39,7 +37,7 @@ initForm(){
     this.route.navigate(['/login']));
   }
   sendMessage(): void {
-   this.User = this.auxauth.displayName;
-   this.mensajeservice.addMessage(this.messages[ this.User, this.Today, this.form.controls['messageBody'].value]);
+    console.log(this.auxauth.displayName)
+   this.mensajeservice.addMessage(this.auxauth.displayName, Date.now(), this.form.controls['messageBody'].value);
   }
 }

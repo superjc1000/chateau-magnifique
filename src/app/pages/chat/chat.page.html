@@ -1,20 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>chat</ion-title>
+    <ion-title>chateau magnifique</ion-title>
+    <ion-button
+      color="danger"
+      class="botoeixida"
+      size="small"
+      shape="round"
+      (click)=" this.signOut();"
+    >
+      Haz click para clickear
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button
-    color="danger"
-    class="boto eixida"
-    size="small"
-    shape="round"
-    (click)=" this.signOut();"
-  >
-    Haz click para clickear
-  </ion-button>
-
   <div *ngFor="let mesage of messages">
     <b>{{mesage.usuario}}:</b>{{mesage.text}}
   </div>
