@@ -1,21 +1,24 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>chateau magnifique</ion-title>
-    <div class="botoeixida">
+  <ion-toolbar class="fondo1">
+    <br />
+    <div class="ion-text-center">
+      <ion-title class="color1">chateau magnifique</ion-title>
+    </div>
+    <div class="ion-text-end">
       <ion-button
         color="danger"
         size="small"
         shape="round"
         (click)=" this.signOut();"
       >
-        Haz click para clickear
+        Cerrar sesión
       </ion-button>
     </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div *ngFor="let mesage of messages">
+<ion-content class="fondo2">
+  <div class="color1" *ngFor="let mesage of messages">
     <b>{{mesage.usuario}}:</b>{{mesage.text}}
   </div>
   <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">

@@ -19,6 +19,7 @@ export class ChatPage implements OnInit {
   auth = getAuth();
   auxauth = this.auth.currentUser;
   
+  
 constructor(private chatservice: ChatService, private route: Router, private fb: FormBuilder, private mensajeservice: MensajesService) 
 { console.log(this.mensajeservice);  this.mensajeservice.getMensajes().subscribe(m => this.messages = m);}
 
@@ -39,6 +40,7 @@ initForm(){
   }
   sendMessage(): void {
    this.mensajeservice.addMessage(this.auxauth.displayName, Date.now(), this.form.controls['messageBody'].value);
+   this.form.get('messageBody')?.reset();
   }
 
   onIonInfinite(ev) {

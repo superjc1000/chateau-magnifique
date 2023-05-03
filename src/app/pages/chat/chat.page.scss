@@ -1,3 +1,15 @@
 .botoeixida {
-    align-items: flex-end
+    align-items: flex-end;
 };
+.color1 {
+    color: whitesmoke;
+};
+.fondo1{
+    --background: #2437df;
+}
+.fondo2{
+    --background: #5564f3;
+}
+ion-content {
+    --background: var(#5564f3); // Replace this with color of your choice
+  }
